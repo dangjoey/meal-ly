@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv/types').config();
 
 const env = process.env.NODE_ENV || 'development';
 
