@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dangjoey/boba-map.git"
+    "url": "git+https://github.com/dangjoey/recipeze.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dangjoey/boba-map/issues"
+    "url": "https://github.com/dangjoey/recipeze/issues"
   },
-  "homepage": "https://github.com/dangjoey/boba-map#readme",
+  "homepage": "https://github.com/dangjoey/recipeze#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
