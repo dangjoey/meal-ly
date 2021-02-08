@@ -15,6 +15,8 @@ mongoose.connect(config.mongodb_uri, {useNewUrlParser: true, useUnifiedTopology:
     app.use(cors());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+
+    app.get('/', (req, res) => res.send("recipeze"));
     
     app.use('/api/recipes', recipes);
     app.use('/api/user', user);
