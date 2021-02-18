@@ -1,9 +1,14 @@
 import React from 'react';
+import IngredientCard from '../IngredientCard';
+
 import './style.scss';
 
 const IngredientsSelect = () => {
   return (
-    <div className="hello"> Hello World</div>
+    <div className="hello">
+      Hello World
+      <IngredientCard/>
+    </div>
   )
 }
 

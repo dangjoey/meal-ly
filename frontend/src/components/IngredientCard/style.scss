@@ -1,0 +1,22 @@
+.check {
+  bottom: 10px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  user-select: none;
+  width: 40px;
+}
+
+.ingredient-card {
+  background-color: rgba(196, 196, 196, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  height: 200px;
+  width: 200px;
+
+  &.selected {
+    background-color: rgba(196, 196, 196, 0.4);
+  }
+}
