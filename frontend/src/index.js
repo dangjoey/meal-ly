@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import RegisterForm from './containers/RegisterForm';
+import './style.scss';
+import HomePage from './containers/HomePage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RegisterForm />
+    <HomePage />
   </React.StrictMode>,
   document.getElementById('root')
 );
