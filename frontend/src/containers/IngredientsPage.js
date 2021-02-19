@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const IngredientsPage = () => {
+import IngredientHeader from '../components/IngredientHeader';
+
+const IngredientsPage = (props) => {
+  const [showIngredients, toggleIngredients] = useState(true);
+
   return (
-    <div>dsajdas</div>
+    <IngredientHeader name="Recipe" toggleIngredients={(boolean) => {
+      toggleIngredients(boolean)
+    }}
+    showIngredients={showIngredients}
+    />
   )
 }
 
