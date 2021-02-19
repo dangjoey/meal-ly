@@ -10,7 +10,7 @@ const LandingPage = () => (
   <div className="landing">
     <h1>recipeze</h1>
     <h2>list your ingredients and we’ll make it easy!</h2>
-    <img alt='logo' className="logo" src={logo}/>
+    <img alt="logo" className="logo" src={logo}/>
     <Link to="/home">
       <button className="meal">Find Your Meal!</button>
     </Link>
