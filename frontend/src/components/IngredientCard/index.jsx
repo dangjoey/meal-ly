@@ -11,8 +11,10 @@ const IngredientCard = (props) => {
         clicked ? 'ingredient-card selected' : 'ingredient-card'
       }
       onClick={() => {
-        setClick(!clicked);
-        props.toggleItem(props.ingredient);
+        if (!props.disabled) {
+          setClick(!clicked);
+          props.toggleItem(props.ingredient);
+        }
       }}
     >
       {clicked && <img alt="check" className="check" src={checkmark}/>}

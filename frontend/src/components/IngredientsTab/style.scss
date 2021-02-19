@@ -1,0 +1,25 @@
+.ingredients-tab {
+  .grid {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
+    overflow: scroll;
+    width: 312px;
+
+    h2 {
+      margin-top: 50px;
+      padding: 0 5%;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+.ingredients-tab {
+  .grid {
+    width: 702px;
+  }
+}
+}
