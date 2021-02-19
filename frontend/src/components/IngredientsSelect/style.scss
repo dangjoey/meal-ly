@@ -1,3 +1,13 @@
-.hello {
-  color: red;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
+  width: 357px;
+}
+
+@media (min-width: 769px) {
+  .grid {
+    width: 702px;
+  }
 }

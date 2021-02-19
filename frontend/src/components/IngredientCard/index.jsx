@@ -14,7 +14,7 @@ const IngredientCard = () => {
         setClick(!clicked)
       }}
     >
-      {clicked && <img alt="cheek" className="check" src={checkmark}/>}
+      {clicked && <img alt="check" className="check" src={checkmark}/>}
     </div>
   )
 }
