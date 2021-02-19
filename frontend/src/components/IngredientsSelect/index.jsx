@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import {
+  Link
+} from "react-router-dom";
+
 import IngredientCard from '../IngredientCard';
 import ingredients from '../../assets/ingredients.json';
 
@@ -32,7 +36,8 @@ const IngredientsSelect = (props) => {
         })}
         
       </div>
-      {Object.keys(selectedItems).length >= 1 && <button className="complete">DONE</button>}
+      {Object.keys(selectedItems).length >= 1 &&
+        <Link to='/recipes'><button className="complete">DONE</button></Link>}
     </div>
   )
 }

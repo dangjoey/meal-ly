@@ -1,11 +1,15 @@
 import React from 'react';
 
+import RecipeHeader from '../components/RecipeHeader';
 import RecipeList from '../components/RecipeList';
 
 const RecipePage = () => {
 
   return (
-    <RecipeList />
+    <>
+      <RecipeHeader />
+      <RecipeList />
+    </>
   )
 }
 
