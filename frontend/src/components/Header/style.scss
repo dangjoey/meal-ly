@@ -1,0 +1,55 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 25vh;
+  width: 100vw;
+
+  h1 {
+    font-size: 1.8em;
+    flex-basis: 100%;
+    padding: 0 15vw;
+    text-align: center;
+  }
+
+  .search-bar-container {
+    position: relative;
+
+    .search {
+      left: 8px;
+      height: 20px;
+      position: absolute;
+      top: 7px;
+    }
+
+    .search-bar {
+      background: rgba(196, 196, 196, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      color: black;
+      font-size:1em;
+      height: 31px;
+      min-width: 220px;
+      padding-left: 30px;
+      width: 30vw;
+
+      &:focus {
+        outline-width: 0;
+      }
+
+      &::placeholder {
+        color: black;
+      }
+    }
+  }
+
+  .filter {
+    background: rgba(196, 196, 196, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 7px;
+    padding: 5px 8px;
+  }
+}

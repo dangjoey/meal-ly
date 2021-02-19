@@ -4,12 +4,17 @@ import ingredients from '../../assets/ingredients.json';
 
 import './style.scss';
 
-const IngredientsSelect = () => {
+const IngredientsSelect = (props) => {
   return (
     <div className="grid">
-      {Object.keys(ingredients).map((number) => (
-        <IngredientCard/>
-      ))}
+      {Object.keys(ingredients).map((name) => {
+        if (name.startsWith(props.searchValue.toLowerCase())) {
+          return (
+            <IngredientCard key={'ingredient' + name}/>
+          );
+        }
+        return null;
+      })}
     </div>
   )
 }

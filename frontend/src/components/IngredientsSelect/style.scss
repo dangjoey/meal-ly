@@ -1,9 +1,12 @@
 .grid {
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
+  max-height: 75vh;
   justify-content: flex-start;
   margin: auto;
-  width: 357px;
+  overflow: scroll;
+  width: 312px;
 }
 
 @media (min-width: 769px) {
