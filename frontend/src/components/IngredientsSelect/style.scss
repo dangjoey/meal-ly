@@ -3,8 +3,10 @@
 
   .complete {
     background: rgba(196, 196, 196, 0.7);
+    border: none;
     border-radius: 8px;
     bottom: 20px;
+    font-size: 1.2em;
     position: absolute;
     height: 50px;
     left: calc(50vw - 100px);
