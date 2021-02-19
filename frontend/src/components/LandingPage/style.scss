@@ -1,21 +1,32 @@
-div {
-  .description {
+.landing {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 3em;
+    margin: 5vh 0 0 0;
+  }
+  
+  h2 {
     color: rgba(0, 0, 0, 0.5);
     font-size: 1.1em;
   }
   
   .logo {
+    padding: 40px 0;
+    width: 300px
   }
 
   .meal {
     background: #C4C4C4;
+    border: none;
     border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
     outline: none;
     text-align: center;
-    
-  }
-
-  .name {
-    font-size: 2.1em;
+    font-size: 1.3em;
+    width: 300px;
   }
 }
