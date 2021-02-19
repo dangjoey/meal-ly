@@ -9,7 +9,7 @@
 
 .ingredient-card {
   background-color: rgba(196, 196, 196, 0.1);
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 8px;
   cursor: pointer;
   height: 85px;
@@ -24,6 +24,7 @@
 
 @media (min-width: 769px) {
   .ingredient-card {
+    border: 1.5px solid rgba(0, 0, 0, 0.4);
     height: 200px;
     margin: 20px 15px;
     width: 200px;
