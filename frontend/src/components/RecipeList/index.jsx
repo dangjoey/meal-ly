@@ -12,8 +12,8 @@ for (let i = 0; i < 5; i++) {
   return (
     <div>
       {nums.map((num) => (
-      <RecipeCard number={num}/>
-          ))}
+        <RecipeCard number={num}/>
+      ))}
     </div>
   )
 }
