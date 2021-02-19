@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import IngredientHeader from '../components/IngredientHeader';
 import IngredientsTab from '../components/IngredientsTab';
+import RecipeTab from '../components/RecipeTab';
 
 const IngredientsPage = (props) => {
   const [showIngredients, toggleIngredients] = useState(true);
@@ -13,7 +14,7 @@ const IngredientsPage = (props) => {
       }}
       showIngredients={showIngredients}
       />
-      {showIngredients ? <IngredientsTab /> : null}
+      {showIngredients ? <IngredientsTab /> : <RecipeTab />}
     </>
   )
 }
