@@ -42,10 +42,15 @@
 
   .camera-modal {
     width: 100%;
+
+    h1 {
+      position: absolute;
+      left: calc(45vw - 100px);
+    }
   
     .camera, .screenshot, canvas {
       height: 62.5vh;
-      width: 37.5vh;
+      width: 50vh;
       left: 5vw;
       top: 3.75vh;
     }

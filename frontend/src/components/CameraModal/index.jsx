@@ -1,12 +1,14 @@
 import React, { useRef, useState } from 'react';
 import { Modal } from 'antd';
 import Webcam from "react-webcam";
+import ingredients from '../../assets/ingredients.json';
 
 import './style.scss';
 
 const CameraModal = (props) => {
 
   const [imageSrc, setImageSrc] = useState('');
+  const [message, setMessage] = useState('');
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -51,23 +53,24 @@ const CameraModal = (props) => {
       let annotation = null;
       for (let i = 0; i < data.responses[0].localizedObjectAnnotations.length; i++) {
         annotation = data.responses[0].localizedObjectAnnotations[i];
-        if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing") {
+        if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" &&  annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredients) {
           break;
         }
       }
-      if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing") {
+      if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" && annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredients) {
         console.log(data.responses);
         console.log(annotation.name);
         drawCanvas(annotation.boundingPoly.normalizedVertices);
-        //setMessage(annotation.name + ' scanned');
+        setMessage(annotation.name + ' scanned');
       }
       else {
-        //setMessage('Nothing found :(');
+        setMessage('Nothing found :(');
         setTimeout(() => {
           const canvas = canvasRef.current;
           const ctx = canvas.getContext('2d');
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           setImageSrc('');
+          setMessage('');
         }, 2000);
       }
     }
@@ -107,6 +110,7 @@ const CameraModal = (props) => {
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       setImageSrc('');
+      setMessage('');
     }, 2000);
   }
 
@@ -122,7 +126,7 @@ const CameraModal = (props) => {
         width="100%"
       >
         <div className="camera-modal">
-          <h1>Item</h1>
+          <h1>Scan Items</h1>
           <Webcam
               ref={webcamRef}
               className="camera"
@@ -132,6 +136,9 @@ const CameraModal = (props) => {
             />
           { imageSrc !== '' && 
             <img alt="screeenshot" className="screenshot" src={imageSrc}></img>
+          }
+          {message !== '' &&
+            <div className="message">{message}</div>
           }
           <canvas ref={canvasRef} height={720} width={1624}/>
           <button
