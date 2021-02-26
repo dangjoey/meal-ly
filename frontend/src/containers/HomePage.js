@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 
-import IngredientsSelect from '../components/IngredientsSelect';
+import CameraModal from '../components/CameraModal';
 import Header from '../components/Header';
+import IngredientsSelect from '../components/IngredientsSelect';
 
 const HomePage = () => {
   const [searchValue, setSearchValue] = useState('')
+  const [isModalVisible, setModalVisible] = useState(false);
 
   return (
     <>
       <Header
+        setModalVisible={() => {
+          setModalVisible(true);
+        }}
         setSearchValue={(event) => {
           setSearchValue(event.target.value);
         }}
       />
-      <IngredientsSelect searchValue={searchValue}/>
+      <CameraModal
+        closeModal={() => {
+          setModalVisible(false);
+        }}
+        isModalVisible={isModalVisible}
+      />
+      <IngredientsSelect searchValue={searchValue}  />
     </>
   )
 }

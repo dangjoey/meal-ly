@@ -19,6 +19,11 @@ const Header = (props) => {
         <img alt="search" className="search" src={search}/>
       </div>
       <img alt="filter" className="filter" src={filter}/>
+      <img
+        alt="filter"
+        className="filter"
+        onClick={props.setModalVisible}
+        src={filter}/>
     </div>
   )
 }
