@@ -1,4 +1,5 @@
 import React from 'react';
+import camera from '../../assets/camera.svg'
 import filter from '../../assets/filter.svg'
 import search from '../../assets/search.svg'
 
@@ -20,10 +21,10 @@ const Header = (props) => {
       </div>
       <img alt="filter" className="filter" src={filter}/>
       <img
-        alt="filter"
+        alt="camera"
         className="filter"
         onClick={props.setModalVisible}
-        src={filter}/>
+        src={camera}/>
     </div>
   )
 }

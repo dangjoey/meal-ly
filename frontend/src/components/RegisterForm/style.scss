@@ -1,3 +1,19 @@
-.register-form {
-  color: red !important;
+.register {
+  .register-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  
+    .form {
+      background: #EAEAEA;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      height: 50px;
+      outline: none;
+      font-size: 1.3em;
+      padding-left: 15px;
+      width: 300px;
+    }
+  }
 }
