@@ -17,7 +17,7 @@
     object-fit: cover;
   }
 
-  .camera, .screenshot {
+  .camera, .screenshot, canvas {
     position: absolute;
     left: calc(45vw - 120px);
     margin: auto;
@@ -43,7 +43,7 @@
   .camera-modal {
     width: 100%;
   
-    .camera, .screenshot {
+    .camera, .screenshot, canvas {
       height: 62.5vh;
       width: 37.5vh;
       left: 5vw;
