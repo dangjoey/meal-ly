@@ -1,8 +1,54 @@
 .ant-modal {
   top: 15vh;
   margin: 0 auto;
+  width: 90vw !important;
+}
+
+.ant-modal-body {
+  padding: 0;
 }
 
 .camera-modal {
-  min-height: 70vh;
+  height: 70vh;
+  position: relative;
+  width: 100%;
+
+  video, img {
+    object-fit: cover;
+  }
+
+  .camera, .screenshot {
+    position: absolute;
+    left: calc(45vw - 120px);
+    margin: auto;
+    height: 400px;
+    top: calc(35vh - 200px);
+    width: 240px;
+  }
+}
+
+#scan {
+  background-color: white;
+  bottom: 5vh;
+  left: calc(45vw - 100px);
+  position: absolute;
+  width: 200px;
+}
+
+@media (min-width: 769px) {
+  .ant-modal {
+    width: 60vw !important;
+  }
+
+  .camera-modal {
+    width: 100%;
+  
+    .camera, .screenshot {
+      height: 62.5vh;
+      width: 37.5vh;
+      left: 5vw;
+      top: 3.75vh;
+    }
+  }
+
 }
