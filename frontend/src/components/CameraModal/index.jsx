@@ -9,6 +9,7 @@ const CameraModal = (props) => {
 
   const [imageSrc, setImageSrc] = useState('');
   const [message, setMessage] = useState('');
+  const [ingredients, setIngredients] = useState([]);
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -62,6 +63,9 @@ const CameraModal = (props) => {
         console.log(annotation.name);
         drawCanvas(annotation.boundingPoly.normalizedVertices);
         setMessage(annotation.name + ' scanned');
+        const lastIngredients = [...ingredients];
+        lastIngredients.push(annotation.name);
+        setIngredients(lastIngredients);
       }
       else {
         setMessage('Nothing found :(');
@@ -140,6 +144,13 @@ const CameraModal = (props) => {
           {message !== '' &&
             <div className="message">{message}</div>
           }
+          <div className="ingredients-modal">
+          {
+            ingredients.map((ingredient) => {
+              return <div>{ingredient}</div>
+            })
+          }
+          </div>
           <canvas ref={canvasRef} height={720} width={1624}/>
           <button
             id="scan"
