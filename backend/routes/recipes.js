@@ -3,8 +3,9 @@ const router = express.Router();
 const fetch = require('node-fetch');
 const config = require('../config');
 
-router.get('/findRecipes', (req, res) => {
+router.get('/findRecipes', async (req, res) => {
   const url = new URL('https://api.spoonacular.com/recipes/findByIngredients');
+  console.log("going to find recipes");
 
   const params = {
     ingredients: req.query.ingredients, 
@@ -13,15 +14,17 @@ router.get('/findRecipes', (req, res) => {
     apiKey: config.spoonacular_api};
 
   url.search = new URLSearchParams(params).toString();
-  console.log(url);
+  // console.log(url);
 
-  fetch(url, {
+  let returnVal =  await fetch (url, {
     method: 'get',
     headers: { 'Content-Type': 'application/json' },
-  }).then(response => response.json())
-  .then(json => console.log(json));
+  }).then (response => response.json())
+  .then(json => json)
+  ;
 
-  //res.send('recipe');
+  await console.log( " RETURN VAL " + returnVal + "DONE")
+  res.send(returnVal);
+  console.log(returnVal);
 });
-
 module.exports = router;
