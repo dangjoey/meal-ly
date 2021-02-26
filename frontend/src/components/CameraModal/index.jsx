@@ -63,6 +63,12 @@ const CameraModal = (props) => {
       }
       else {
         //setMessage('Nothing found :(');
+        setTimeout(() => {
+          const canvas = canvasRef.current;
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          setImageSrc('');
+        }, 2000);
       }
     }
   }
