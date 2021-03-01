@@ -1,19 +1,59 @@
-.register {
-  .register-form {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  
-    .form {
-      background: #EAEAEA;
+.register-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form {
+    position: relative;
+
+    .email {
+      width: 20px;
+      left: 15px;
+      position: absolute;
+      top: 18px;
+    }
+
+    .lock {
+      width: 20px;
+      left: 15px;
+      position: absolute;
+      top: 12px;
+    }
+
+    .password {
       border: none;
-      border-radius: 8px;
+      border-bottom: 1px solid #ACACAC;
       cursor: pointer;
       height: 50px;
       outline: none;
-      font-size: 1.3em;
-      padding-left: 15px;
+      font-size: 1.2em;
+      padding-left: 50px;
+      position: relative;
+      width: 300px;
+    }
+
+    .username {
+      border: none;
+      border-bottom: 1px solid #ACACAC;
+      cursor: pointer;
+      height: 50px;
+      outline: none;
+      font-size: 1.2em;
+      padding-left: 50px;
       width: 300px;
     }
   }
+  
+  .input {
+    margin-top: 20px;
+  }
+
+  input::placeholder {
+    color: #ACACAC;
+  }
+}
+
+button.meal {
+  margin-top: 20px;
 }
