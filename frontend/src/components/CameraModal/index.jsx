@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Modal } from 'antd';
 import Webcam from "react-webcam";
-import ingredients from '../../assets/ingredients.json';
+import ingredientsJson from '../../assets/ingredients.json';
 
 import './style.scss';
 
@@ -54,17 +54,16 @@ const CameraModal = (props) => {
       let annotation = null;
       for (let i = 0; i < data.responses[0].localizedObjectAnnotations.length; i++) {
         annotation = data.responses[0].localizedObjectAnnotations[i];
-        if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" &&  annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredients) {
+        if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" &&  annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredientsJson) {
           break;
         }
       }
-      if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" && annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredients) {
-        console.log(data.responses);
-        console.log(annotation.name);
+      if (annotation.name !== "Person" && annotation.name !== "Lighting" && annotation.name !== "Clothing" && annotation.name !== "Mobile phone" && annotation.name.toLowerCase() in ingredientsJson && !(annotation.name in  ingredients)) {
         drawCanvas(annotation.boundingPoly.normalizedVertices);
         setMessage(annotation.name + ' scanned');
         const lastIngredients = [...ingredients];
         lastIngredients.push(annotation.name);
+        props.enableItem(annotation.name.toLowerCase());
         setIngredients(lastIngredients);
       }
       else {
