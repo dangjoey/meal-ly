@@ -1,0 +1,22 @@
+.facebook-container {
+  margin: 0px 25px 20px;
+  position: relative;
+
+  .facebook-login {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    font-size: 1.1em;
+    height: 45px;
+    outline: none;
+    position: relative;
+    width: 300px;
+  }
+  .fb-logo {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+  }
+}
