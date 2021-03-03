@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const food = require('./routes/food');
 const recipes = require('./routes/recipes');
 const user = require('./routes/user');
+const instructions = require('./routes/instructions');
 const config = require('./config');
 
 mongoose.connect(config.mongodb_uri, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -21,6 +22,7 @@ mongoose.connect(config.mongodb_uri, {useNewUrlParser: true, useUnifiedTopology:
     app.use('/api/recipes', recipes);
     app.use('/api/user', user);
     app.use('/api/food', food);
+    app.use('/api/instructions', instructions)
 
     app.listen(config.port);
     console.log(`Starting server on port ${config.port}`);
