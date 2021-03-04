@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './style.scss';
-import IngredientCard from '../IngredientCard';
+import IngredientTapCard from '../IngredientTapCard';
 
 const IngredientsTab = () => {
 
@@ -12,16 +12,16 @@ const IngredientsTab = () => {
   }
   return (
     <div className="ingredients-tab">
-      <div className="grid">
-        <h2>OWNED</h2>
+      <div className="ingredients-grid">
+        <h2 className="ingredient-section">Owned</h2>
         {nums.map((num) => (
-          <IngredientCard disabled={true}/>
+          <IngredientTapCard amount="200g" disabled={true} name="test"/>
         ))}
       </div>
-      <div className="grid">
-        <h2>MISSING</h2>
+      <div className="ingredients-grid">
+        <h2 className="ingredient-section">Missing</h2>
         {nums.map((num) => (
-          <IngredientCard disabled={true}/>
+          <IngredientTapCard amount="200g" disabled={true} name="test"/>
         ))}
       </div>
     </div>
