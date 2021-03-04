@@ -71,7 +71,7 @@ const IngredientsSelect = (props) => {
         
       </div>
       {Object.keys(state.selectedItems).length >= 1 &&
-        <Link to='/recipes'><button className="complete">DONE</button></Link>}
+        <Link to='/recipes'><button className="complete">Done</button></Link>}
       <CameraModal
         closeModal={props.closeModal}
         isModalVisible={props.isModalVisible}
