@@ -1,12 +1,11 @@
-import { Formik } from "formik";
 import { withFormik } from 'formik';
 
 import RegisterForm from './RegisterForm';
 
 const FormikRegisterForm = withFormik({
-  mapPropsToValues({username, password}) {
+  mapPropsToValues({email, password}) {
     return {
-      username: username || '',
+      email: email || '',
       password: password || '',
     };
   },
