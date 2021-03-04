@@ -2,25 +2,29 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin: auto;
   max-height: 25vh;
-  width: 100vw;
+  max-width: 715px;
+  width: 80vw;
   
-  h1 {
-    font-size: 1.5em;
-    flex-basis: 100%;
-    margin: 0px;
-    padding: 0 15vw;
-    text-align: center;
-  }
-  
-  p {
-    font-size: 0.8em;
-    padding: 0 15vw;
-    text-align: center;
+  .back {
+    margin: 25px 0;
   }
 
-  .check {
-    margin: 20px 0;
+  .description {
+    color: #ACACAC;
+    font-size: 1em;
+    font-weight: 400;
+    width: 230px;
+  }
+
+  h1 {
+    flex-basis: 100%;
+    font-size: 2em;
+
+    .underline {
+      padding-bottom: 5px;
+      border-bottom: #1CD8D2 solid 5px;
+    }
   }
 }

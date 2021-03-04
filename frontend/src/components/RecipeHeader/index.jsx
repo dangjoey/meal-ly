@@ -1,12 +1,17 @@
 import React from 'react';
-import check from '../../assets/check.svg';
+import {
+  Link
+} from "react-router-dom";
+import back from '../../assets/back.svg'
 import './style.scss';
 
 const RecipeHeader = () => (
   <div className="recipe-header">
-    <img alt="check" className="check" src={check}/>
-    <h1> Recipe Results! </h1>
-    <p>Recipes that include one or more of the ingredients you entered.</p>
+    <Link to="/home">
+        <img alt="back" className="back" src={back}/>
+      </Link>
+      <h1><span className="underline">Reco</span>mmended</h1>
+      <h2 className="description">recipes that include more than one ingredients you entered</h2>
   </div>
 )
 
