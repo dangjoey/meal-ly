@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import CameraModal from '../components/CameraModal';
 import Header from '../components/Header';
 import IngredientsSelect from '../components/IngredientsSelect';
 
@@ -18,13 +17,12 @@ const HomePage = () => {
           setSearchValue(event.target.value);
         }}
       />
-      <CameraModal
+      <IngredientsSelect
         closeModal={() => {
           setModalVisible(false);
         }}
         isModalVisible={isModalVisible}
-      />
-      <IngredientsSelect searchValue={searchValue}  />
+        searchValue={searchValue}  />
     </>
   )
 }

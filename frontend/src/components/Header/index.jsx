@@ -1,15 +1,21 @@
 import React from 'react';
+import {
+  Link
+} from "react-router-dom";
+import back from '../../assets/back.svg'
 import camera from '../../assets/camera.svg'
-import filter from '../../assets/filter.svg'
 import search from '../../assets/search.svg'
-
 
 import './style.scss';
 
 const Header = (props) => {
   return (
     <div className="header">
-      <h1>What ingredients do you have on hand?</h1>
+      <Link to="/">
+        <img alt="back" className="back" src={back}/>
+      </Link>
+      <h1><span className="underline">Ingre</span>dients</h1>
+      <h2 className="description">search by text or scan your ingredients!</h2>
       <div className="search-bar-container">
         <input
           className="search-bar"
@@ -18,13 +24,12 @@ const Header = (props) => {
           type="text"
         />
         <img alt="search" className="search" src={search}/>
-      </div>
-      <img alt="filter" className="filter" src={filter}/>
-      <img
+        <img
         alt="camera"
-        className="filter"
+        className="camera"
         onClick={props.setModalVisible}
         src={camera}/>
+      </div>
     </div>
   )
 }
