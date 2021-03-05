@@ -5,20 +5,21 @@ import checkmark from '../../assets/check-mark.svg';
 const IngredientCard = (props) => {
 
   return (
-    <div
-      className={
-        props.clicked ? 'ingredient-card selected' : 'ingredient-card'
-      }
-      style = {{
-        backgroundImage: "url(" + props.src + ")"
-      }}
-      onClick={() => {
-        if (!props.disabled) {
-          props.toggleItem(props.ingredient);
+    <div className="ingredient-card-parent">
+      <div
+        className={
+          props.clicked ? 'ingredient-card selected' : 'ingredient-card'
         }
-      }}
-    >
-      {props.clicked && <img alt="check" className="check" src={checkmark}/>}
+        style = {{
+          backgroundImage: "url(" + props.src + ")"
+        }}
+        onClick={() => {
+          if (!props.disabled) {
+            props.toggleItem(props.ingredient);
+          }
+        }}
+      >
+      </div>
     </div>
   )
 }

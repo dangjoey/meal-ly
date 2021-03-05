@@ -1,39 +1,54 @@
-.ingredient-card {
-  background-color: rgba(196, 196, 196, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.4);
+
+.ingredient-card-parent {
   border-radius: 8px;
-  cursor: pointer;
-  display: inline-block;
   height: 85px;
-  position: relative;
   margin: 10px 7.5px;
   width: 85px;
-  background-size: cover;
+  overflow: hidden;
 
-  &.selected {
-    background-color: rgba(196, 196, 196, 0.4);
-  }
+  .ingredient-card {
+    background-color: rgba(196, 196, 196, 0.1);
+    background-size: cover;
+    border: 5px transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    height: 85px;
+    overflow: hidden;
+    position: relative;
+    width: 85px;
 
-  .check {
-    bottom: 10px;
-    height: 20px;
-    position: absolute;
-    right: 10px;
-    user-select: none;
-    width: 20px;
+    &.selected {
+      border: 5px solid;
+      border-image: linear-gradient(90deg, #1CD8D2 0%, #93EDC7 100%) 30;
+      border-radius: 8px;
+    }
+
+    .check {
+      bottom: 10px;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      user-select: none;
+      width: 20px;
+    }
   }
 }
 
 @media (min-width: 769px) {
-  .ingredient-card {
-    border: 1.5px solid rgba(0, 0, 0, 0.4);
+.ingredient-card-parent {
     height: 200px;
-    margin: 20px 15px;
     width: 200px;
-  }
+    margin: 20px 15px;
 
-  .check {
-    height: 40px;
-    width: 40px;
+    .ingredient-card {
+      height: 200px;
+      width: 200px;
+    }
+
+    .check {
+      height: 40px;
+      width: 40px;
+    }
   }
 }
