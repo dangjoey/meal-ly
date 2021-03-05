@@ -55,5 +55,38 @@
   },
   "spinach": {
     "link": "https://cdn.mos.cms.futurecdn.net/atyrpYQoxdoTzmEgu8HMWE.jpg"
+  },
+  "shrimp": {
+  	"link": "https://post.healthline.com/wp-content/uploads/2020/09/shrimp-on-wooden-platter-fb-1200x628.jpg"
+  },
+  "lobster": {
+  	"link": "https://www.dinneratthezoo.com/wp-content/uploads/2020/02/how-to-cook-a-lobster-3.jpg"
+  },
+  "squid": {
+  	"link": "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/7/2/5/4/3854527-6-eng-GB/Protein-salvaged-from-squid-processing-poses-functional-food-potential_wrbm_large.png"
+  },
+  "papaya": {
+  	"link": "https://www.pennlive.com/resizer/A3SFzVs-ebUgJj0HfiOJTdhNhD0=/1280x0/smart/arc-anglerfish-arc2-prod-advancelocal.s3.amazonaws.com/public/XNGFH2RKVVGCFHZECLLUJED7UI.png"
+  },
+  "blueberry": {
+  	"link": "https://post.healthline.com/wp-content/uploads/2020/08/blueberries-1200x628-facebook-1200x628.jpg"
+  },
+  "lychee": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/lychee.jpg"
+  },
+  "raisins": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/raisins.jpg"
+  },
+  "coconute": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/coconut.jpg"
+  },
+  "cherry": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/cherries.jpg"
+  },
+  "apricot": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/apricot.jpg"
+  },
+  "guava": {
+  	"link": "https://i.ndtvimg.com/mt/cooks/2014-11/guava.jpg"
   }
 }
