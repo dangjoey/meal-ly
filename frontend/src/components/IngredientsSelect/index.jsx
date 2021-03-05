@@ -29,6 +29,7 @@ const IngredientsSelect = (props) => {
     let ingredientsString = "";
     ingredientsArray.map((item) => {
       ingredientsString += (item + ",");
+      return null;
     })
     ingredientsString = ingredientsString.slice(0, -1);
     history.push({

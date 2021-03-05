@@ -35,7 +35,7 @@ useEffect(() => {
     setRecipes(data);
     console.log(data);
   })
-}, []);
+}, [location.search]);
 
   return (
     <div className="recipes">

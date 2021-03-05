@@ -26,7 +26,7 @@ const IngredientsPage = (props) => {
       setInstructions(data[0].steps);
       console.log(data);
     })
-  }, []);
+  }, [location.search]);
 
 
   return (
