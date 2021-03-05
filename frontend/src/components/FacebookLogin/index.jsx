@@ -6,10 +6,11 @@ import facebookLogo from '../../assets/facebook-logo.svg'
 import './style.scss'
 
 const FacebookLoginButton = (props) => {
+
   return (
     <FacebookLogin
       appId="351461732681782"
-      autoLoad={true}
+      autoLoad={false}
       callback={props.responseFacebook}
       render={renderProps => (
         <div className="facebook-container">

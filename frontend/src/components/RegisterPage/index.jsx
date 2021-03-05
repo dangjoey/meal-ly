@@ -3,23 +3,23 @@ import {
   Link
 } from "react-router-dom";
 import FacebookLogin from '../FacebookLogin'
-import LoginForm from '../LoginForm'
+import RegisterForm from '../RegisterForm'
 import './style.scss';
 
-const LandingPage = (props) => {
+const RegisterPage = (props) => {
   const responseFacebook = (response) => {
     console.log(response);
   }
 
   return (
-    <div className="landing">
+    <div className="register">
       <h1><span className="underline">me</span>al.ly</h1>
       <h2 className="description">list your ingredients and we’ll make it easy!</h2>
-      <LoginForm db={props.db}/>
+      <RegisterForm db={props.db}/>
       <div className="new-account">
-        <h3>Don’t have an account?</h3>
-        <Link to="/register">
-        <h3 className="sign-up">Sign Up</h3>
+        <h3>Already have an account?</h3>
+        <Link to="/">
+          <h3 className="sign-in">Sign In</h3>
         </Link>
       </div>
       <span id="login-divider">or</span>
@@ -32,4 +32,4 @@ const LandingPage = (props) => {
   )
 }
 
-export default LandingPage;
+export default RegisterPage;

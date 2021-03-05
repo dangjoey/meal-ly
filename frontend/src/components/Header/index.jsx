@@ -5,6 +5,7 @@ import {
 import back from '../../assets/back.svg'
 import camera from '../../assets/camera.svg'
 import search from '../../assets/search.svg'
+import user from '../../assets/user.svg'
 
 import './style.scss';
 
@@ -14,6 +15,7 @@ const Header = (props) => {
       <Link to="/">
         <img alt="back" className="back" src={back}/>
       </Link>
+      <img alt="user" className="user" src={user}/>
       <h1><span className="underline">Ingre</span>dients</h1>
       <h2 className="description">search by text or scan your ingredients!</h2>
       <div className="search-bar-container">

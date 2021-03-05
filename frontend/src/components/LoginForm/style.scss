@@ -20,8 +20,8 @@
       position: absolute;
       top: 12px;
     }
-
-    .name, .password, .username {
+    
+    .password, .username {
       border: none;
       border-bottom: 1px solid #ACACAC;
       cursor: pointer;
@@ -32,12 +32,8 @@
       position: relative;
       width: 300px;
     }
-
-    .user {
-      width: 20px;
-      left: 15px;
-      position: absolute;
-      top: 14px;
+    .username {
+      margin: 15px 0;
     }
   }
 
@@ -52,7 +48,7 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.2em;
-    margin: 5vh 25px;
+    margin: 7vh 25px;
     height: 45px;
     outline: none;
     text-align: center;

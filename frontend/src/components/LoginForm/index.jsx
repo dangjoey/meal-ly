@@ -5,39 +5,39 @@ import {
 import { notification } from 'antd';
 import envelope from '../../assets/envelope.svg'
 import lock from '../../assets/lock.svg'
-import user from '../../assets/user.svg'
 
 import "./style.scss";
 
-const RegisterForm = (props) => {
+const LoginForm = (props) => {
   const [formInputs, setFormInputs] = useState({});
-  const history = useHistory()
+  const history = useHistory();
 
   const submitForm = async(e) => {
     e.preventDefault();
     console.log('form');
     console.log(formInputs);
     const email = formInputs.email;
-    const name = formInputs.name;
     const password = formInputs.password;
 
-    const data = {
-      name: name,
-      email: email,
-      password: password
-    };
-
+    console.log(email);
     const docRef = props.db.collection("user").doc(email);
 
     docRef.get().then((doc) => {
       if (doc.exists) {
+        if (doc.data() && doc.data().password == password) {
+          return history.push('/home');
+        }
+        else {
+          notification.open({
+            message: 'Error',
+            description: 'Incorrect Password!'
+          });
+        }
+      } else {
         notification.open({
           message: 'Error',
-          description: 'Account already exists!'
+          description: 'Account does not exist!'
         });
-      } else {
-        docRef.set(data);
-        return history.push('/');
       }
     });
   }
@@ -48,18 +48,8 @@ const RegisterForm = (props) => {
     formInputsCopy[e.target.name] = e.target.value;
     setFormInputs(formInputsCopy);
   }
-
   return (
     <form className="register-form">
-      <div className="form">
-        <input 
-          className="name"
-          name="name"
-          onChange={onType}
-          placeholder="Name"
-          type="name" />
-        <img alt="user" className="user" src={user}/>
-      </div>
       <div className="form">
         <input 
           className="username"
@@ -67,19 +57,19 @@ const RegisterForm = (props) => {
           onChange={onType}
           placeholder="Email"
           type="email" />
-        <img alt="email" className="email" src={envelope}/>
+        <img alt="email" className="email" name="password" src={envelope}/>
       </div>
       <div className="form">
-        <input className="password" 
+        <input className="password"
           name="password"
-          onChange={onType}
+          onChange={onType} 
           placeholder="Password"
           type="password" />
         <img alt="lock" className="lock" src={lock}/>
       </div>
-      <button className="login" onClick={submitForm}>Sign Up</button>
+      <button className="login" onClick={submitForm} type="submit">Sign In</button>
     </form>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
