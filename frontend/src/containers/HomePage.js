@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import IngredientsSelect from '../components/IngredientsSelect';
 
-const HomePage = () => {
+const HomePage = (props) => {
   const [searchValue, setSearchValue] = useState('')
   const [isModalVisible, setModalVisible] = useState(false);
 
@@ -16,6 +16,7 @@ const HomePage = () => {
         setSearchValue={(event) => {
           setSearchValue(event.target.value);
         }}
+        name={props.name}
       />
       <IngredientsSelect
         closeModal={() => {

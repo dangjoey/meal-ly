@@ -8,7 +8,7 @@ import './style.scss';
 
 const RecipeCard = (props) => {
   return (
-    <div className="recipe-card">
+    <div className="recipe-card" onClick={props.onClick}>
       <Link to="/ingredients">
         <img alt="recipe" className="recipe" src={props.image}/>
         <div className="recipe-content">

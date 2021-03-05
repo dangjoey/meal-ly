@@ -15,7 +15,10 @@ const Header = (props) => {
       <Link to="/">
         <img alt="back" className="back" src={back}/>
       </Link>
-      <img alt="user" className="user" src={user}/>
+      <div className="user">
+        <img alt="user" src={user}/>
+        <span>{props.name}</span>
+      </div>
       <h1><span className="underline">Ingre</span>dients</h1>
       <h2 className="description">search by text or scan your ingredients!</h2>
       <div className="search-bar-container">

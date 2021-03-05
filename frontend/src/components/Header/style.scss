@@ -5,6 +5,7 @@
   min-height: 25vh;
   margin: auto;
   padding-left: 18px;
+  position: relative;
   width: 312px;
 
   .back {
@@ -62,6 +63,16 @@
       &::placeholder {
         color: #ACACAC;
       }
+    }
+  }
+  .user {
+    height: 15px;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+
+    img {
+      margin-right: 5px;
     }
   }
 }

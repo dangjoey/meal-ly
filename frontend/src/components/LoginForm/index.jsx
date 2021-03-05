@@ -24,7 +24,8 @@ const LoginForm = (props) => {
 
     docRef.get().then((doc) => {
       if (doc.exists) {
-        if (doc.data() && doc.data().password == password) {
+        if (doc.data() && doc.data().password === password) {
+          props.setName(doc.data().name);
           return history.push('/home');
         }
         else {

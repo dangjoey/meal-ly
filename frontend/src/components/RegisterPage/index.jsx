@@ -1,14 +1,16 @@
 import React from 'react';
 import {
-  Link
+  Link, useHistory
 } from "react-router-dom";
 import FacebookLogin from '../FacebookLogin'
 import RegisterForm from '../RegisterForm'
 import './style.scss';
 
 const RegisterPage = (props) => {
+  const history = useHistory();
   const responseFacebook = (response) => {
-    console.log(response);
+    props.setName(response.name);
+    history.push('/home');
   }
 
   return (

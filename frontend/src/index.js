@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import {
+  Redirect, 
   BrowserRouter as Router,
   Route,
   Switch,
@@ -16,38 +17,73 @@ import RegisterPage from './components/RegisterPage';
 import './style.scss';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyATWw6q4CDZi2mpy-4_imoZuS8i3ly-hVo",
-  authDomain: "meally-cc30d.firebaseapp.com",
-  databaseURL: "https://meally-cc30d-default-rtdb.firebaseio.com",
-  projectId: "meally-cc30d",
-  storageBucket: "meally-cc30d.appspot.com",
-  messagingSenderId: "727966624326",
-  appId: "1:727966624326:web:ae5530248afc91ad8e7847",
-  measurementId: "G-W5X9QG4TCM"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 });
 const db = firebase.firestore();
 
-ReactDOM.render(
+const MainComponent = () => {
+  const [name, setName] = useState('');
+  const [imageSrc, setImageSrc] = useState('');
+  const [missingIngredients, setMissingIngredients] = useState([]);
+  const [remainingIngredients, setRemainingIngredients] = useState([]);
+
+  return (
   <React.StrictMode>
     <Router>
       <Switch>
         <Route path="/home">
-          <HomePage />
+          { name ? 
+          <HomePage name={name} />
+          : <Redirect to="/" />}
         </Route>
         <Route path="/recipes">
-          <RecipePage />
+          {name ? <RecipePage
+            name={name}
+            setImageSrc={(imageSrcInput) => {
+              setImageSrc(imageSrcInput);
+            }}
+            setMissingIngredients={(missingIngredientsInput) => {
+              setMissingIngredients(missingIngredientsInput);
+            }}
+            setRemainingIngredients={(remainingIngredientsInput) => {
+              setRemainingIngredients(remainingIngredientsInput);
+            }}
+            /> : <Redirect to="/" />}
         </Route>
         <Route path="/ingredients">
-          <IngredientsPage />
+          {name ? <IngredientsPage
+            imageSrc={imageSrc}
+            missingIngredients={missingIngredients}
+            remainingIngredients={remainingIngredients}
+          /> : <Redirect to="/" />}
         </Route>
         <Route path="/register">
-          <RegisterPage db={db}/>
+          <RegisterPage setName={(nameInput) => {
+            console.log(nameInput);
+            console.log('hi');
+            setName(nameInput);
+          }} db={db}/>
         </Route>
         <Route path="/">
-          <LandingPage db={db} />
+          <LandingPage setName={(nameInput) => {
+            console.log(nameInput);
+            console.log('hi');
+            setName(nameInput);
+          }} db={db} />
         </Route>
       </Switch>
     </Router>
-  </React.StrictMode>,
+  </React.StrictMode>
+  )
+}
+
+ReactDOM.render(
+  <MainComponent />,
   document.getElementById('root')
 );

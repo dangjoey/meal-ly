@@ -7,7 +7,7 @@ const IngredientTapCard = (props) => {
 
   return (
     <div className="tap-card">
-      <IngredientCard disabled={true} className="item-card"/>
+      <IngredientCard disabled={true} className="item-card" src={props.src}/>
       <h1>{props.name}</h1>
       <h2>{props.amount}</h2>
     </div>

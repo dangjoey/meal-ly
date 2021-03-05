@@ -3,12 +3,16 @@ import React from 'react';
 import RecipeHeader from '../components/RecipeHeader';
 import RecipeList from '../components/RecipeList';
 
-const RecipePage = () => {
+const RecipePage = (props) => {
 
   return (
     <>
-      <RecipeHeader />
-      <RecipeList />
+      <RecipeHeader name={props.name}/>
+      <RecipeList 
+        setImageSrc={props.setImageSrc}
+        setMissingIngredients={props.setMissingIngredients}
+        setRemainingIngredients={props.setRemainingIngredients}
+      />
     </>
   )
 }

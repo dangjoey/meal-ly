@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import {
-  Link
+  useHistory
 } from "react-router-dom";
 
 import IngredientCard from '../IngredientCard';
@@ -22,6 +22,20 @@ const reducer = (state, action) => {
 
 const IngredientsSelect = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const history = useHistory();
+
+  const submitIngredients = () => {
+    const ingredientsArray = Object.keys(state.selectedItems);
+    let ingredientsString = "";
+    ingredientsArray.map((item) => {
+      ingredientsString += (item + ",");
+    })
+    ingredientsString = ingredientsString.slice(0, -1);
+    history.push({
+      pathname: "/recipes",
+      search: `${ingredientsString}`
+    });
+  }
 
   const enableItem = (itemName) => {
     console.log('what');
@@ -71,7 +85,7 @@ const IngredientsSelect = (props) => {
         
       </div>
       {Object.keys(state.selectedItems).length >= 1 &&
-        <Link to='/recipes'><button className="complete">Done</button></Link>}
+        <button className="complete" onClick={submitIngredients}>Done</button>}
       <CameraModal
         closeModal={props.closeModal}
         isModalVisible={props.isModalVisible}

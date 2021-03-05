@@ -9,7 +9,7 @@ import './style.scss';
 const IngredientHeader = (props) => {
   return (
     <>
-    <img alt="recipe" className="recipe-image" src="http://placekitten.com/400/300"/>
+    <img alt="recipe" className="recipe-image" src={props.image}/>
     <div className="ingredient-header">
       <Link to="/recipes">
         <img alt="back" className="back" src={back}/>

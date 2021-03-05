@@ -1,51 +1,40 @@
 import React, { useEffect, useState } from 'react';
+import {
+  useHistory
+} from "react-router-dom";
+import {
+  useLocation
+} from "react-router-dom";
 import RecipeCard from '../RecipeCard';
 
 import './style.scss';
 
-const RecipeList = () => {
+const RecipeList = (props) => {
+  const history = useHistory();
 
-const [recipes, setRecipes] = useState([{
-  id: 665574,
-  image: "http://placekitten.com/400/300",
-  likes: 1,
-  missedIngredientCount: 2,
-  title: "Yorkshire Pudding",
-  usedIngredientCount: 1
-},{
-  id: 665574,
-  image: "http://placekitten.com/400/300",
-  likes: 1,
-  missedIngredientCount: 2,
-  title: "Yorkshire Pudding",
-  usedIngredientCount: 1
-},{
-  id: 665574,
-  image: "http://placekitten.com/400/300",
-  likes: 1,
-  missedIngredientCount: 2,
-  title: "Yorkshire Pudding",
-  usedIngredientCount: 1
-},{
-  id: 665574,
-  image: "http://placekitten.com/400/300",
-  likes: 1,
-  missedIngredientCount: 2,
-  title: "Yorkshire Pudding",
-  usedIngredientCount: 1
-}])
+  const submitId = (id, name, imageSrc, missingIngredients, remainingIngredients) => {
+    props.setImageSrc(imageSrc);
+    props.setMissingIngredients(missingIngredients);
+    props.setRemainingIngredients(remainingIngredients);
 
-const ingredients = "brocolli,beef";
+    const idString = id + ',' + name;
+    history.push({
+      pathname: "/ingredients",
+      search: `${idString}`
+    });
+  }
 
+const [recipes, setRecipes] = useState([])
+let location = useLocation();
 useEffect(() => {
-  /*fetch(`http://localhost:5000/api/recipes/findRecipes?ingredients=${ingredients}`, {
+  fetch(`https://backend-server-recipieze.herokuapp.com/api/recipes/findRecipes?ingredients=${location.search.substring(1)}`, {
     method: 'get',
     headers: { 'Content-Type': 'application/json' },
   }).then(response => response.json())
   .then(data => {
     setRecipes(data);
     console.log(data);
-  })*/
+  })
 }, []);
 
   return (
@@ -54,6 +43,7 @@ useEffect(() => {
         <RecipeCard
           key={recipe.id}
           name={recipe.title}
+          onClick={() => {submitId(recipe.id, recipe.title, recipe.image, recipe.missedIngredients, recipe.usedIngredients)}}
           missingIngredients={recipe.missedIngredientCount}
           usedIngredients={recipe.usedIngredientCount}
           likes={recipe.likes}
