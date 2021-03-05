@@ -1,43 +1,64 @@
 .ant-modal {
-  top: 15vh;
+  top: 10vh;
   margin: 0 auto;
   width: 90vw !important;
+}
+
+.ant-modal-container {
+  border-radius: 10px;
 }
 
 .ant-modal-body {
   padding: 0;
 }
 
+.description {
+  color: #ACACAC;
+  font-size: 1em;
+  font-weight: 400;
+}
+
 .ingredients-modal {
   display: none;
-  position: absolute;
+  font-size: 1.2em;
   left: calc(45vw - 150px);
   top: 10vh;
-  font-size: 1.2em;
+  position: absolute;
 }
 
 .message {
   background-color: white;
-  position: absolute;
-  bottom: 10vh;
-  left: calc(45vw - 100px);
-  padding: 5px;
   border-radius: 5px;
+  bottom: 13vh;
+  color: #ACACAC;
+  padding: 5px;
+  position: absolute;
   text-align: center;
-  width: 200px;
+  width: 100%;
 }
 
 .camera-modal {
-  height: 70vh;
+  height: 80vh;
   position: relative;
   width: 100%;
 
   h1 {
+    left: 10%;
     margin-top: 2vh;
-    width: 200px;
-    text-align: center;
     position: absolute;
-    left: calc(45vw - 100px);
+    width: 250px;
+
+    .underline {
+      border-bottom: #1CD8D2 solid 5px;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    left: 10%;
+    margin-top: 8vh;
+    position: absolute;
+    width: 150px;
   }
 
   video, img {
@@ -45,22 +66,26 @@
   }
 
   .camera, .screenshot, canvas {
-    position: absolute;
-    left: calc(45vw - 120px);
-    margin: auto;
-    height: 400px;
-    top: calc(35vh - 200px);
-    width: 240px;
     border-radius: 5px;
+    height: 60%;
+    left: 10%;
+    position: absolute;
+    margin: auto;
+    top: 22%;
+    width: 80%;
   }
 }
 
 #scan {
-  background-color: white;
+  background: linear-gradient(90deg, #1CD8D2 0%, #93EDC7 100%);
+  border: none;
+  border-radius: 5px;
   bottom: 5vh;
-  left: calc(45vw - 100px);
+  color: white;
+  height: 40px;
+  left: 10%;
   position: absolute;
-  width: 200px;
+  width: 80%;
 }
 
 @media (min-width: 769px) {
@@ -73,13 +98,6 @@
 
   .camera-modal {
     width: 100%;
-  
-    .camera, .screenshot, canvas {
-      height: 62.5vh;
-      width: 50vh;
-      left: 5vw;
-      top: 3.75vh;
-    }
   }
 
 }

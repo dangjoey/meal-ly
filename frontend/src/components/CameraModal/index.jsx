@@ -129,7 +129,8 @@ const CameraModal = (props) => {
         width="100%"
       >
         <div className="camera-modal">
-          <h1>Scan Items</h1>
+          <h1><span className="underline">Sca</span>n Items</h1>
+          <h2 className="description">scan your ingredients to add them to your list</h2>
           <Webcam
               ref={webcamRef}
               className="camera"
