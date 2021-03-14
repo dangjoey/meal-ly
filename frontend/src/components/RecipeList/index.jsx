@@ -26,6 +26,8 @@ const RecipeList = (props) => {
 
 const [recipes, setRecipes] = useState([])
 let location = useLocation();
+props.setSearchLink(location.search.substring(1));
+console.log('test:' + location.search.substring(1));
 useEffect(() => {
   fetch(`https://backend-server-recipieze.herokuapp.com/api/recipes/findRecipes?ingredients=${location.search.substring(1)}`, {
     method: 'get',
