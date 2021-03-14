@@ -31,6 +31,7 @@ const MainComponent = () => {
   const [name, setName] = useState('');
   const [imageSrc, setImageSrc] = useState('');
   const [missingIngredients, setMissingIngredients] = useState([]);
+  const [searchLink, setSearchLink] = useState('');
   const [remainingIngredients, setRemainingIngredients] = useState([]);
 
   return (
@@ -54,6 +55,9 @@ const MainComponent = () => {
             setRemainingIngredients={(remainingIngredientsInput) => {
               setRemainingIngredients(remainingIngredientsInput);
             }}
+            setSearchLink={(searchLinkInput) => {
+              setSearchLink(searchLinkInput);
+            }}
             /> : <Redirect to="/" />}
         </Route>
         <Route path="/ingredients">
@@ -61,6 +65,7 @@ const MainComponent = () => {
             imageSrc={imageSrc}
             missingIngredients={missingIngredients}
             remainingIngredients={remainingIngredients}
+            searchLink={searchLink}
           /> : <Redirect to="/" />}
         </Route>
         <Route path="/register">

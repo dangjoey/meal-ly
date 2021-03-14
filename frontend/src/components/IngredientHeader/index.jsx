@@ -7,11 +7,12 @@ import back from '../../assets/back.svg'
 import './style.scss';
 
 const IngredientHeader = (props) => {
+  const link = '/recipes?' + props.searchLink;
   return (
     <>
     <img alt="recipe" className="recipe-image" src={props.image}/>
     <div className="ingredient-header">
-      <Link to="/recipes">
+      <Link to={link}>
         <img alt="back" className="back" src={back}/>
       </Link>
       <h1>{props.name}</h1>

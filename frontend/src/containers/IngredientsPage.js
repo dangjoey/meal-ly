@@ -23,8 +23,8 @@ const IngredientsPage = (props) => {
       headers: { 'Content-Type': 'application/json' },
     }).then(response => response.json())
     .then(data => {
-      setInstructions(data[0].steps);
       console.log(data);
+      setInstructions(data[0].steps);
     })
   }, [location.search]);
 
@@ -34,8 +34,9 @@ const IngredientsPage = (props) => {
       <IngredientHeader name={name} toggleIngredients={(boolean) => {
         toggleIngredients(boolean)
       }}
-      showIngredients={showIngredients}
       image={props.imageSrc}
+      searchLink={props.searchLink}
+      showIngredients={showIngredients}
       />
       {showIngredients ? <IngredientsTab missingIngredients={props.missingIngredients} remainingIngredients={props.remainingIngredients}/> : <RecipeTab instructions={instructions}/>}
     </>

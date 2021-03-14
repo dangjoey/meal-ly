@@ -12,6 +12,7 @@ const RecipePage = (props) => {
         setImageSrc={props.setImageSrc}
         setMissingIngredients={props.setMissingIngredients}
         setRemainingIngredients={props.setRemainingIngredients}
+        setSearchLink={props.setSearchLink}
       />
     </>
   )
