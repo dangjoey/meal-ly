@@ -8,7 +8,7 @@ const FacebookLoginButton = (props) => {
 
   return (
     <FacebookLogin
-      appId={process.env.REACT_FACEBOOK_KEY}
+      appId={process.env.REACT_APP_FACEBOOK_KEY}
       autoLoad={false}
       callback={props.responseFacebook}
       render={renderProps => (
