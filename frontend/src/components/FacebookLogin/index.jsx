@@ -1,5 +1,4 @@
 import React from 'react';
-//import FacebookLogin from 'react-facebook-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 import facebookLogo from '../../assets/facebook-logo.svg'
@@ -9,7 +8,7 @@ const FacebookLoginButton = (props) => {
 
   return (
     <FacebookLogin
-      appId="351461732681782"
+      appId={process.env.REACT_FACEBOOK_KEY}
       autoLoad={false}
       callback={props.responseFacebook}
       render={renderProps => (
